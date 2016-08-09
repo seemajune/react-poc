@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Pontano+Sans);
+
+i {
+  color: #fff;
+  padding: 10%;
+}
+
+#Assignment { /*block*/
+  width: 80%;
+  max-width: 750px;
+  .transition(background 0.5s ease);
+  .transition(max-height 0.3s ease);
+  border-color: #e1e1e4;
+  display: block;
+  padding: 1%;
+}
+
+@media only screen and (max-width:980px) {
+  .assignment {
+    max-width: 450px;
+  }
+}
+
+.assignment__card { /*block__element*/
+  border: 1px solid #e1e1e4;
+  border-radius: 5px;
+  font-family: 'Pontano Sans', sans-serif;
+  display: inline-block;
+  position: relative;
+}
+
+@media only screen and (max-width:980px) {
+  .assignment__card {
+    float: left;
+    width: 100%;
+  }
+}
+
+.assignment__card__title {
+  overflow: hidden;
+  cursor: pointer;
+  height: 38px;
+  font-weight: bolder;
+  color: #fff;
+  background-color: #2badd9;
+}
+
+.assignment__card__title h2 {
+  font-size: 1.5em;
+  padding-left: 2%;
+  margin: 0;
+}
+
+.assignment__card__summary {
+  font-size: 0.9em;
+  width: 80%;
+  display: inline-block;
+  float: left;
+  margin-left: 2%;
+  color: #666;
+}
+
+@media only screen and (max-width:980px) {
+  .assignment__card__summary {
+    width: 70%;
+    font-size: .8em;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .assignment__card__summary {
+    font-size: .7em;
+  }
+}
+
+.assignment__card--hidden { /*block__element--modifier*/
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 14px;
+  margin-top: 3%;
+  float: right;
+}
+
+@media only screen and (max-width:980px) {
+  .btn {
+    padding: 1px 5px;
+    margin: 0;
+    font-size: 12px;
+  }
+}
+
+.btn__watch {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #1d2172;
+  border-radius: 12px;
+  font-variant: small-caps;
+}
+
+.btn__watch:hover {
+  background-color: #1e7997;
+}
+
+.gutter {
+  display: inline-block;
+  background-color: #ccc;
+  width: 40px;
+  height: 180px;
+}
+
+.gutter--left {
+  float: left;
+}
+
+.gutter--left:hover {
+  background-color: #2DBFC3;
+}
