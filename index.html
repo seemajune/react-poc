@@ -6,49 +6,52 @@
   <script src="https://fb.me/react-15.1.0.js"></script>
   <script src="https://fb.me/react-dom-15.1.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-  <style>
-  	h1 {
-  		overflow: hidden;
-  		cursor: pointer;
-  		height: 38px;
-  		font-family: Helvetica;
-  		font-weight: bolder;
-  		color: #fff;
-  		background-color: #2badd9;
-	}
-	#card {
-  		width: 80%;
-  		max-width: 750px;
-  		.transition(background 0.5s ease);
-  		.transition(max-height 0.3s ease);
-  		border-color: #e1e1e4;
-  		display: block;
-  		padding: 1%;
-	}
-</style>
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
  
 <body>
   <div id="card"></div>
   <script type="text/babel">
  	var myAssignment = {
-  		title: "MCAT assignment #1",
-  		subtitle: "This is some subtitle"
+    	title: "mcat-diagnostic-exam",
+        subtitle: "MCAT Diagnostic Exam",
+  		buttonText: "Watch Now"
 	};
- 	
+ 	// normally we would create a separate React Component file, use a transpiler and use 
+ 	// require(); within our main js file. ex: var myAssignment = require('./myAssignment'); -> which would point to the 
+ 	// webpack output file 
+	var AssignmentSummary = React.createClass({
+		render: function(){
+			return (
+      			<p>{myAssignment.subtitle}</p>
+    		);
+		}	 
+	});
+
+	var AssignmentButton = React.createClass({
+		render: function(){
+			return (
+      			<button>{myAssignment.buttonText}</button>
+    		);
+		}	 
+	});
 
 	var Assignment = React.createClass({
 		render: function(){
 			return (
-      			<h1>{myAssignment.title} - {myAssignment.subtitle}</h1>
+      			<div className="card card__details">
+      				<div className="card__title"><h2>{myAssignment.title}</h2></div>
+      				<AssignmentSummary className="card__summary"></AssignmentSummary>
+      				<AssignmentButton className="btn btn__watch"></AssignmentButton>
+      			</div>
     		);
-		}
-	 
+		}	 
 	});
 
  	ReactDOM.render(
-  	<Assignment></Assignment>,
-    document.querySelector("#card")
+  	<Assignment>
+  	</Assignment>,
+    document.getElementById("card")
     ); 
   </script>
 </body>
