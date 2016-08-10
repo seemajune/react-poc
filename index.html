@@ -31,7 +31,7 @@
 	var AssignmentButton = React.createClass({
 		render: function(){
 			return (
-      			<button>{myAssignment.buttonText}</button>
+      			<button className="btn btn__watch">{myAssignment.buttonText}</button>
     		);
 		}	 
 	});
@@ -42,7 +42,7 @@
       			<div className="card card__details">
       				<div className="card__title"><h2>{myAssignment.title}</h2></div>
       				<AssignmentSummary className="card__summary"></AssignmentSummary>
-      				<AssignmentButton className="btn btn__watch"></AssignmentButton>
+      				<AssignmentButton></AssignmentButton>
       			</div>
     		);
 		}	 
